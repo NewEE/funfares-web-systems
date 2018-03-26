@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/FUNFARES.CSS">
+  </head>
+  <body>
+
+
+    <!-- nevigation -->
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="card-header">
+          <nav class="nav nav-pills card-header-pills" >
+          <a class="nav-link" href="../Fanfares/index">Funfares</a>
+          <a class="nav-link" href="../Fanfares/search">Search</a>
+          <a class="nav-link" href="../Fanfares/create">Create</a>
+          <a class="nav-link " href="../Fanfares/admin">Admin</a>
+          <a class="nav-link  active" href="/city/adminCity/?page=1">AdminCity</a>
+          <a class="nav-link " href="/city/createCity">createCity</a>
+
+          </nav>
+        </div>
+
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-3">FunFares&nbsp;<img class="img-fluid" src="/images/imgs/plane.PNG" alt="Card image cap"></h1>
+            <p class="lead">Limited time. Limited seats. Full of Fun.</p>
+          </div>
+        </div>
+
+    </div>
+
+
+
+      <!-- admin start -->
+    <div class="card col-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#No.</th>
+            <th>Region</th>
+            <th>Destination</th>
+            <th>Action</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <% var index =1;
+        CityModels.forEach( function(model) { %>
+        <tbody>
+
+          <tr>
+            <th scope="row"><%=index++%></th>
+            <td><%=model.Region%></td>
+            <td><%=model.City%></td>
+            <td><span><a class="" href="/City/viewCity/<%=model.id%>">update</a></span></td>
+            <td><span><a class="" href="/City/delete/<%=model.id%>">delete</a></span></td>
+          </tr>
+
+        </tbody>
+        <% }); %>
+      </table>
+  </div>
+
+    <!-- pagination start -->
+    <!-- pagination start -->
+    <div class="card col-12 p-2">
+      <nav aria-label="Page navigation example">
+        <% var current = req.query.page %>
+        <ul class="pagination">
+          <!-- li class="page-item"><a class="page-link">Previous</a></li -->
+          <li class="page-item"><a class="page-link" href="/City/adminCity/?page=<%=Math.max(current-1, 1)%>" aria-label="Previous">
+            <span aria-hidden="true">Previous</span> </a>
+          </li>
+
+          <%for(i=1;i<=count;i++){%>
+             <li class="page-item"><a class="page-link" href="/City/adminCity/?page=<%=i%>"> <%=i%> </a></li>
+         <%}%>
+
+         <li><a class="page-link" href="/City/adminCity/?page=<%=Math.min(current*1+1, count)%>" aria-label="Next">
+                 <span aria-hidden="true">Next</span></a>
+         </li>
+
+        </ul>
+
+      </nav>
+    </div>
+    <!-- pagination end -->
+    <!-- pagination end -->
+
+<!-- admin end -->
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

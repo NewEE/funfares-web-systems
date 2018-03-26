@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Create</title> <!-- <%= title %> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/FUNFARES.CSS">
+  </head>
+  <body>
+
+
+    <!-- nevigation -->
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="card-header">
+          <nav class="nav nav-pills card-header-pills" >
+          <a class="nav-link" href="../Fanfares/index">Funfares</a>
+          <a class="nav-link" href="../Fanfares/search">Search</a>
+          <a class="nav-link" href="../Fanfares/create">Create</a>
+          <a class="nav-link active" href="../Fanfares/admin">Admin</a>
+          </nav>
+        </div>
+
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-3">FunFares&nbsp;<img class="img-fluid" src="/images/imgs/plane.PNG" alt="Card image cap"></h1>
+            <p class="lead">Limited time. Limited seats. Full of Fun.</p>
+          </div>
+        </div>
+
+    </div>
+
+
+
+      <!-- form start -->
+    <form class="form-group col-12" action="/City/updateCity/<%=Cdata.id%>" method="POST">
+        <!-- 1 form-group row -->
+         <div class="form-group col-12 col-sm-6">
+             <label for="example-select-input" class="col-12 Fanfarescol-form-label">Region: <span class="R_tips" id="R_tips" >pls choose right Region.</span></label>
+             <select class="form-control" id="Region"  name="CityModel[Region]">
+               <option value="default">choose the region</option>
+               <option value="EAR">East Asia</option>
+               <option value="SEA">South-east Asia</option>
+               <option value="AMR">Americas</option>
+             </select>
+        </div>
+
+        <div class="form-group col-12 col-sm-6">
+           <label for="example-select-input" class="col-12 Fanfarescol-form-label">City: </label>
+           <input class="form-control" id="City" value="<%=Cdata.City%>" name ="CityModel[City]">
+         </input>
+        </div>
+
+        <div class="form-group col-12 col-sm-6 ">
+        <button type="submit" class="btn btn-primary row" value="Add">Udate</button>
+        <div>
+</form>
+
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+    <script>
+
+    // initial the RegionObj for testing.
+    // EAR: east-asia, SEA: South-East Asia, AMR: Americas
+      var RegionObj= new Array("EAR","SEA","AMR");
+    //  var CityObj ={"EAR":["Osaka","Seoul"],"AEA":["Cebu","Singapore"], "AMR":["Los Angeles","Boston"]};
+
+      // varify the region and city
+      $(document).ready(function(){
+        $("#Region").change(function(){
+          var reg=$("#Region").val(); //
+          var SFlag = true; // string flag
+          if(! typeof reg =="string") RFlag =false;
+          var OFlag =false; // object flag
+
+          if(SFlag){
+            var j=RegionObj.length;
+            for (var i=0;i<j;i++){
+              if (RegionObj[i] == reg) OFlag= true;
+            }
+          }
+
+          //var city = document.getElementById("City");
+          var city = $('#City');
+            city.val()="";
+
+          if (SFlag && OFlag) {
+              city.disabled = false; // active the select
+              $("#R_tips").hide();
+          } else {
+            $("#R_tips").show();
+            city.disabled = true;
+          }
+
+            //console.log("Region:"+reg.val());
+        });
+      });
+
+
+    </script>
+  </body>
+</html>

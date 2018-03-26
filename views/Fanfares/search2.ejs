@@ -1,0 +1,89 @@
+
+
+<!-- card start -->
+    <div class="card-group col-12"> <!-- left: search result -->
+
+
+    <div class="row col-6" > <!-- start show pages -->
+    <%  SFdataModels.forEach( function(model) { %>
+      <div class="col-12 p-3" >
+          <img class="card-img-top"  src="<%=model.Image%>" alt="Card image cap">
+          <div class="card-body col-12 ">
+            <a class="" href="/Fanfares/viewdetails/<%=model.id%>"> <h2 class="card-title text-primary" id="<%=model.City%>"><%=model.City%></h2></a>
+              <p class="card-text">Economy Class:&nbsp;<%=model.Class ==1?'Economy':'Business'%></p>
+              <p class="card-text"><spa>Valid Till:&nbsp;<%=model.ValidDate%></span>&nbsp;&nbsp;<span>Quota:&nbsp; <%=model.Quota>0? model.Quota:'Sold Out!'%></span> </p>
+              <p class="card-text"> <small class="text-muted">Date:&nbsp;<%=model.B_Dates%> To <%=model.E_Dates%></small></p>
+          </div>
+
+      </div>
+      <% }); %>
+
+
+  </div> <!-- end show pages -->
+
+  <div class="row col-6">  <!-- right: start research pages //searchTesting -->
+
+    <!-- form start -->
+      <form class="form-group col-12" action="/Fanfares/search" method="POST" onsubmit="BeforeSubmit()">
+        <h4 class="card-title text-primary">Search</h4>
+          <div class="form-group row col-12">
+              <span for="example-select-input" class="col-6 col-form-label">Region: &nbsp;</span>
+              <div class="col-12">
+                <select class="form-control" id="Region"  name="JFConditons[Region]" >
+                  <option value="0" selected>All the regions</option>
+                  <option value="EAR">East Asia</option>
+                  <option value="SEA">South-east Asia</option>
+                  <option value="AMR">Americas</option>
+                </select>
+              </div>
+          </div>
+
+          <div class="form-group row col-12">
+            <span for="example-select-input" class="col-12 col-form-label">Range: </span>
+            <div class="col-12">  <input type="text" id="range" value="" name="JFConditons[Range]" /> </div>
+            <div class="BERange">
+              <input type="text" id="BPRange" value="" name="JFConditons[BPRange]" />
+              <input type="text" id="EPRange" value="" name="JFConditons[EPRange]" />
+            </div>
+          </div>
+
+          <div class="form-group row col-12">
+            <label for="example-date-input" class="col-12 col-form-label">Dates: &nbsp;</label>
+            <div class="col-6">
+              <input class="form-control" type="date" value="" id="B_Dates" name="JFConditons[B_Dates]">
+            </div>
+            <div class="col-6">
+              <input class="form-control" type="date" value="" id="E_Dates" name="JFConditons[E_Dates]">
+            </div>
+          </div>
+
+          <div class="form-group row col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+      </form>      <!-- form end -->
+  </div> <!-- end research pages -->
+
+</div> <!-- card end -->
+
+    <!-- pagination start -->
+    <div class="card col-6">
+      <nav aria-label="Page navigation example">
+        <% var current = req.query.page %>
+        <ul class="pagination">
+          <!-- li class="page-item"><a class="page-link">Previous</a></li -->
+          <li class="page-item"><a class="page-link" href="/Fanfares/search/?page=<%=Math.max(current-1, 1)%>" aria-label="Previous">
+            <span aria-hidden="true">Previous</span> </a>
+          </li>
+
+          <%for(var i=1;i<=count;i++){%>
+             <li class="page-item"><a class="page-link" href="/Fanfares/search/?page=<%=i%>"> <%=i%> </a></li>
+         <%}%>
+
+         <li><a class="page-link" href="/Fanfares/search/?page=<%=Math.min(current*1+1, count)%>" aria-label="Next">
+                 <span aria-hidden="true">Next</span></a>
+         </li>
+
+        </ul>
+
+      </nav>
+    </div>    <!-- pagination end -->

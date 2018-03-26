@@ -1,0 +1,37 @@
+.img-fluid{
+width: 50PX;
+height: auto;
+}
+
+.card-img{
+  height: 300px;
+  width: 100%;
+}
+
+.card {
+  border-style: none;
+}
+
+.j-container{
+  float: left;
+}
+.R_tips .BERange{
+  display: none;
+}
+
+.form-group{
+  float:left;
+}
+
+.card-columns {
+
+  display: inline-block;
+  column-break-inside: avoid;
+
+  @include media-breakpoint-only(lg) {
+    column-count: 5;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+}

@@ -1,0 +1,78 @@
+
+
+      <!-- form start -->
+
+    <form class="form-group col-12" action="/Fanfares/update/<%=Fdata.id%>" method="POST">
+        <!-- 1 form-group row -->
+         <div class="form-group col-12 col-sm-6">
+             <label for="example-select-input" class="col-12 Fanfarescol-form-label">Region: <span class="R_tips" id="R_tips" >pls choose correct Region.</span></label>
+             <select class="form-control" id="Region"  name="Fanfares[Region]">
+               <option value="default">choose the region</option>
+               <option value="EAR">East Asia</option>
+               <option value="SEA">South-east Asia</option>
+               <option value="AMR">Americas</option>
+             </select>
+        </div>
+
+        <div class="form-group col-12 col-sm-6">
+             <label for="example-select-input" class="col-12 Fanfarescol-form-label">City: </label>
+             <select class="form-control" id="City" name ="Fanfares[City]"  disabled>
+             </select>
+        </div>
+
+
+
+    <!-- 2 form-group row -->
+    <div class="form-group col-12 col-sm-6 ">
+
+         <label for="example-select-input" class="col-12 Fanfarescol-form-label">Class:</label>
+          <select class="form-control" id="Class" name ="Fanfares[Class]" value="<%=Fdata.Price ==1?'Economy':'Business'%>">
+            <option value="1">Economic</option>
+            <option value="2">Business</option>
+          </select>
+    </div>
+
+    <div class="form-group col-12 col-sm-6 ">
+        <label for="example-number-input" class="col-12 Fanfarescol-form-label">Price:</label>
+        <input class="form-control" type="number" value="<%=Fdata.Price%>" id="Price" name ="Fanfares[Price]">
+    </div>
+
+
+
+    <!-- 3 form-group row -->
+  <div class="form-group col-12 col-sm-6 ">
+        <label for="example-text-input" class=" col-12 Fanfarescol-form-label">Image:</label>
+        <input class="form-control" type="text" value="<%=Fdata.Image%>" id="Image" name ="Fanfares[Image]">
+  </div>
+
+  <div class="form-group col-12 col-sm-6 ">
+        <label for="example-date-input" class="col-12 Fanfarescol-form-label">Date Valid Till:</label>
+        <input class="form-control" type="date" value="<%=Fdata.ValidDate%>" id="date_valid_till" name ="Fanfares[ValidDate]">
+  </div>
+
+
+
+  <!-- 4 form-group row -->
+  <div class="form-group col-12 col-sm-6 ">
+      <label for="example-number-input" class="col-12 Fanfarescol-form-label">Quota:</label>
+      <input class="form-control" type="number" value="<%=Fdata.Quota%>" id="Quota" name ="Fanfares[Quota]">
+    </div>
+
+    <div class="form-group col-12 col-sm-6 ">
+      <label for="example-date-input" class="col-12 Fanfarescol-form-label">Dates:</label>
+      <input class="form-control" type="date" value="<%=Fdata.B_Dates%>" id="B_Dates" name ="Fanfares[B_Dates]">
+      <input class="form-control" type="date" value="<%=Fdata.E_Dates%>" id="E_Dates" name ="Fanfares[E_Dates]">
+    </div>
+
+    <div class="form-group col-12 col-sm-6 ">
+    <button type="submit" class="btn btn-primary row" value="Add">Update</button>
+    <div>
+</form>
+
+<!-- form end
+
+<script type="text/javascript">
+    $("#B_Dates").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+</script>
+
+-->

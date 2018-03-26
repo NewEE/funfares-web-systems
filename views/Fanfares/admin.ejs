@@ -1,0 +1,62 @@
+
+
+      <!-- admin start -->
+    <div class="card col-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ID</th>
+          <th>Destination</th>
+          <th>Valid Date To</th>
+          <th>Action</th>
+          <th>Action</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <%  var index=1;
+      FdataModels.forEach( function(model) { %>
+      <tbody>
+
+        <tr>
+          <th scope="row"><%=index %></th>
+          <td><%=model.id%></td>
+          <td><%=model.City%></td>
+          <td><%=model.ValidDate%></td>
+          <td><span><a class="" href="/Fanfares/view/<%=model.id%>">Update</a></span></td>
+          <td><span><a class="" href="/Fanfares/delete/<%=model.id%>">Delete</a></span></td>
+          <td><span><a class="" href="/Order/showUsers/<%=model.City%>">Bought Users</a></span></td>
+
+        </tr>
+
+      </tbody>
+      <% index++; }); %>
+    </table>
+  </div>
+
+    <!-- pagination start -->
+    <div class="card col-12 p-2">
+      <nav aria-label="Page navigation example">
+        <% var current = req.query.page %>
+        <ul class="pagination">
+          <!-- li class="page-item"><a class="page-link">Previous</a></li -->
+          <li class="page-item"><a class="page-link" href="/Fanfares/admin/?page=<%=Math.max(current-1, 1)%>" aria-label="Previous">
+            <span aria-hidden="true">Previous</span> </a>
+          </li>
+
+          <%for(var i=1;i<=count;i++){%>
+             <li class="page-item"><a class="page-link" href="/Fanfares/admin/?page=<%=i%>"> <%=i%> </a></li>
+         <%}%>
+
+         <li><a class="page-link" href="/Fanfares/admin/?page=<%=Math.min(current*1+1, count)%>" aria-label="Next">
+                 <span aria-hidden="true">Next</span></a>
+         </li>
+
+        </ul>
+
+      </nav>
+    </div>
+    <!-- pagination end -->
+
+<!-- admin end -->

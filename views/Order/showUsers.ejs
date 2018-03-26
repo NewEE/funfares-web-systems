@@ -1,0 +1,28 @@
+
+
+      <!-- admin start -->
+    <div class="card col-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>User</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <%  var index;
+      var len = userModels.length;
+      for ( index=0; index< len;index++) { %>
+      <tbody>
+
+        <tr>
+          <th scope="row"><%= index+1 %></th>
+          <td><%= userModels[index]%></td>
+          <td><a href="/Order/viewUserDetails/?name=<%= userModels[index]%>&page=1">Detials</a></td>
+        </tr>
+
+      </tbody>
+      <%  } %>
+    </table>
+  </div>

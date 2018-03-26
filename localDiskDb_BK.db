@@ -1,0 +1,267 @@
+{
+  "data": {
+    "fanfares": [
+      {
+        "Region": "EAR",
+        "City": "Seoul",
+        "Class": "2",
+        "Price": "6000",
+        "Image": "/images/imgs/Seoul.jpeg",
+        "ValidDate": "2017-11-29",
+        "Quota": "5",
+        "B_Dates": "2017-11-01",
+        "E_Dates": "2017-11-09",
+        "createdAt": "2017-10-22T01:36:06.891Z",
+        "updatedAt": "2017-11-15T01:55:51.027Z",
+        "id": 2
+      },
+      {
+        "Region": "EAR",
+        "City": "Osaka",
+        "Class": "2",
+        "Price": "4000",
+        "Image": "/images/imgs/Osaka.jpeg",
+        "ValidDate": "2017-12-27",
+        "Quota": "55",
+        "B_Dates": "2017-10-31",
+        "E_Dates": "2017-11-15",
+        "createdAt": "2017-10-22T06:37:41.778Z",
+        "updatedAt": "2017-11-15T01:56:12.308Z",
+        "id": 3
+      },
+      {
+        "Region": "SEA",
+        "City": "Cebu",
+        "Class": "1",
+        "Price": "4000",
+        "Image": "/images/imgs/Cebu.jpeg",
+        "ValidDate": "2017-12-12",
+        "Quota": "120",
+        "B_Dates": "2017-11-16",
+        "E_Dates": "2017-12-29",
+        "createdAt": "2017-10-22T06:38:16.880Z",
+        "updatedAt": "2017-11-15T01:57:36.912Z",
+        "id": 4
+      },
+      {
+        "Region": "SEA",
+        "City": "Singapore",
+        "Class": "1",
+        "Price": "40000",
+        "Image": "/images/imgs/Singapore.jpeg",
+        "ValidDate": "2017-11-30",
+        "Quota": "1000",
+        "B_Dates": "2017-12-01",
+        "E_Dates": "2017-12-29",
+        "createdAt": "2017-10-22T06:39:03.169Z",
+        "updatedAt": "2017-11-15T01:55:17.382Z",
+        "id": 5
+      },
+      {
+        "Region": "AMR",
+        "City": "Los Angeles",
+        "Class": "2",
+        "Price": "520",
+        "Image": "/images/imgs/Los Angeles.jpeg",
+        "ValidDate": "2017-12-12",
+        "Quota": "77",
+        "B_Dates": "2017-10-31",
+        "E_Dates": "2017-11-03",
+        "createdAt": "2017-10-22T06:39:56.074Z",
+        "updatedAt": "2017-11-15T01:56:32.179Z",
+        "id": 6
+      },
+      {
+        "Region": "AMR",
+        "City": "Boston",
+        "Class": "1",
+        "Price": "5208",
+        "Image": "/images/imgs/Boston.jpeg",
+        "ValidDate": "2017-11-30",
+        "Quota": "99",
+        "B_Dates": "2017-10-25",
+        "E_Dates": "2017-11-03",
+        "createdAt": "2017-10-22T06:40:49.693Z",
+        "updatedAt": "2017-11-15T01:54:32.471Z",
+        "id": 7
+      },
+      {
+        "Region": "AMR",
+        "City": "Boston",
+        "Class": "2",
+        "Price": "10000",
+        "Image": "/images/imgs/Boston.jpeg",
+        "ValidDate": "2017-12-31",
+        "Quota": "500",
+        "B_Dates": "2018-01-10",
+        "E_Dates": "2018-01-18",
+        "createdAt": "2017-10-24T02:25:04.536Z",
+        "updatedAt": "2017-10-24T02:25:04.536Z",
+        "id": 8
+      },
+      {
+        "Region": "SEA",
+        "City": "Singapore",
+        "Class": "1",
+        "Price": "601",
+        "Image": "/images/imgs/Singapore.jpeg",
+        "ValidDate": "2017-12-31",
+        "Quota": "10",
+        "B_Dates": "2017-10-27",
+        "E_Dates": "2017-11-08",
+        "createdAt": "2017-10-24T11:30:17.608Z",
+        "updatedAt": "2017-11-15T01:57:10.928Z",
+        "id": 9
+      }
+    ],
+    "fans": [],
+	"user": [
+		{
+			"UserName": "admin",
+			"Password":"1",
+			"Type":"admin",			
+			"createdAt": "2017-10-23T02:25:04.536Z",
+			"updatedAt": "2017-10-23T02:25:04.536Z",
+			"id":1
+		},
+		{
+			"UserName": "boss",
+			"Password":"1",
+			"Type":"admin",			
+			"createdAt": "2017-10-25T02:25:04.536Z",
+			"updatedAt": "2017-10-25T02:25:04.536Z",
+			"id":2
+		},
+		{
+			"UserName": "user1",
+			"Password":"1",
+			"Type":"user",			
+			"createdAt": "2017-10-26T02:25:04.536Z",
+			"updatedAt": "2017-10-26T02:25:04.536Z",
+			"id":3
+		},
+		{
+			"UserName": "user2",
+			"Password":"1",
+			"Type":"user",			
+			"createdAt": "2017-10-27T02:25:04.536Z",
+			"updatedAt": "2017-10-27T02:25:04.536Z",
+			"id":4
+		}
+	],	
+    "city": [
+      {
+        "Region": "EAR",
+        "City": "Osaka",
+        "createdAt": "2017-10-22T04:20:01.526Z",
+        "updatedAt": "2017-10-22T04:21:53.486Z",
+        "id": 1
+      },
+      {
+        "Region": "EAR",
+        "City": "Seoul",
+        "createdAt": "2017-10-22T04:23:32.937Z",
+        "updatedAt": "2017-10-22T04:23:32.937Z",
+        "id": 2
+      },
+      {
+        "Region": "SEA",
+        "City": "Cebu",
+        "createdAt": "2017-10-22T04:23:44.574Z",
+        "updatedAt": "2017-10-22T04:23:44.574Z",
+        "id": 3
+      },
+      {
+        "Region": "SEA",
+        "City": "Singapore",
+        "createdAt": "2017-10-22T04:24:00.537Z",
+        "updatedAt": "2017-10-22T04:24:00.537Z",
+        "id": 4
+      },
+      {
+        "Region": "AMR",
+        "City": "Los Angeles",
+        "createdAt": "2017-10-22T04:24:13.273Z",
+        "updatedAt": "2017-10-22T04:24:13.273Z",
+        "id": 5
+      },
+      {
+        "Region": "AMR",
+        "City": "Boston",
+        "createdAt": "2017-10-22T04:28:24.490Z",
+        "updatedAt": "2017-10-22T04:28:24.490Z",
+        "id": 7
+      }
+    ]
+  },
+  "schema": {
+    "fanfares": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "fans": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+	"user": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "city": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "fanfares": {
+      "id": 9
+    },
+    "fans": {},
+	"user": {
+	  "id": 4
+	},
+    "city": {
+      "id": 7
+    }
+  }
+}

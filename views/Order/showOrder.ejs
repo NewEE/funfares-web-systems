@@ -1,0 +1,68 @@
+
+
+      <!-- admin start -->
+    <div class="card col-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ID</th>
+          <th>FanItem</th>
+          <th>Destination</th>
+          <th>Duration</th>
+          <th>Seats</th>
+          <th>Price</th>
+          <th>Class</th>
+          <th>Status</th>
+          <th>Action</th>
+          <th>Buyers</th>
+        </tr>
+      </thead>
+
+      <%  var index=1;
+      ODataModel.forEach( function(model) { %>
+      <tbody>
+
+        <tr>
+          <th scope="row"><%=index %></th>
+          <td><%=model.id%></td>
+          <td><a href="/Fanfares/viewdetails/<%=model.fanID%>">Detials</a></td>
+          <td><%=model.fanCity%></td>
+          <td><%=model.fanBDate%> To <%=model.fanEDate%></td>
+          <td><%=model.fanSeats%></td>
+          <td><%=model.fanPrice%></td>
+          <td><%=model.fanClass%></td>
+          <td><%=model.fanStatus%></td>
+          <td><span><a href="/Order/cancelOrder/<%=model.id%>">Cancel</a></span></td>
+          <td><%=model.UserName%></td>
+
+        </tr>
+
+      </tbody>
+      <% index++; }); %>
+    </table>
+  </div>
+
+    <!-- pagination start -->
+    <div class="card col-12 p-2">
+      <nav aria-label="Page navigation example">
+        <% var current = req.query.page %>
+        <ul class="pagination">
+          <!-- li class="page-item"><a class="page-link">Previous</a></li -->
+          <li class="page-item"><a class="page-link" href="/Order/showOrder/?page=<%=Math.max(current-1, 1)%>" aria-label="Previous">
+            <span aria-hidden="true">Previous</span> </a>
+          </li>
+
+          <%for(var i=1;i<=count;i++){%>
+             <li class="page-item"><a class="page-link" href="/Order/showOrder/?page=<%=i%>"> <%=i%> </a></li>
+         <%}%>
+
+         <li><a class="page-link" href="/Order/showOrder/?page=<%=Math.min(current*1+1, count)%>" aria-label="Next">
+                 <span aria-hidden="true">Next</span></a>
+         </li>
+
+        </ul>
+
+      </nav>
+    </div>
+    <!-- pagination end -->

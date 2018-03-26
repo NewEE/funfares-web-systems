@@ -1,0 +1,39 @@
+
+
+
+<!-- card start -->
+  <div class="row">
+
+        <!-- card Seoul style="max-width: 10rem;" -->
+        <%
+        FdataModels.forEach( function(model) { %>
+        <div class="card col-12 col-sm-6 col-lg-4 col-xl-3 p-2">
+            <img class="card-img-top"  src="<%=model.Image%>" alt="Card image cap">
+            <div class="card-body">
+              <a class="" href="/Fanfares/viewdetails/<%=model.id%>"><h2 class="card-title text-primary" id="<%=model.City%>"><%=model.City%></h2></a>
+                <p class="card-text">Economy Class: <%=model.Class ==1?'Economy':'Business'%></p>
+                <p class="card-text"><spa>Valid Till: <%=model.ValidDate%></span>&nbsp;<span>Quota: <%=model.Quota>0? model.Quota:'Sold Out!'%></span> </p>
+                <p class="card-text"> <small class="text-muted">Date:&nbsp;<%=model.B_Dates%> To <%=model.E_Dates%></small></p>
+            </div>
+
+        </div>
+        <% }); %>
+    </div>
+
+    <!-- pagination start -  -  >
+    <div class="card col-12">
+      <nav aria-label="Page navigation example">
+        <% var current = req.query.page %>
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="/Fanfares/index/?page=<%=Math.max(current-1, 1)%>" aria-label="Previous">
+            <span aria-hidden="true">Previous</span> </a>
+          </li>
+          <%for(var i=1;i<=count;i++){%>
+             <li class="page-item"><a class="page-link" href="/Fanfares/index/?page=<%=i%>"> <%=i%> </a></li>
+         <%}%>
+         <li><a class="page-link" href="/Fanfares/index/?page=<%=Math.min(current*1+1, count)%>" aria-label="Next">
+                 <span aria-hidden="true">Next</span></a>
+         </li>
+        </ul>
+      </nav>
+    </div>    <!-- pagination end -->

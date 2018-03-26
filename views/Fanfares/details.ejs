@@ -1,0 +1,47 @@
+
+
+    <!-- card start  -->
+    <div class="row">
+      <div class="Card  col-6">
+        <img class="card-img-top"  src="<%=Fdata.Image%>" alt="Card image cap">
+
+
+              <form class="form-group col-12 col-6 p-1" action="/Order/book" method="POST">
+                <div  class="hideClass" style="display: none;">
+                  <input type="text" value="<%=UserName%>" name="Order[UserName]" />
+                  <input type="text" value="<%=Fdata.id%>" name="Order[fanID]" />
+                  <input type="text" value="<%=Fdata.City%>" name="Order[fanCity]" />
+                  <input type="text" value="<%=Fdata.B_Dates%>" name="Order[fanBDate]" />
+                  <input type="text" value="<%=Fdata.E_Dates%>" name="Order[fanEDate]" />
+                  <input type="text" value="<%=Fdata.Price%>" name="Order[fanPrice]" />
+                  <input type="text" value="<%=Fdata.Class==1?'Economy':'Business'%>" name="Order[fanClass]" />
+                </div>
+
+                <div class="form-group col-12 col-sm-6 p-2">
+                    <label for="example-number-input" class="col-12 Fanfarescol-form-label text-primary">Reserve Seats:&nbsp;
+                        <input type="number" class="col-6" value="1" name="Order[fanSeats]" min='1' max='<%=Fdata.Quota%>'/>
+                        <input type="text" class="col-6" value="<%=Fdata.Quota%>" name="Quota" hidden="true"/>
+                    </label>
+                </div>
+                <div class="form-group col-12 col-sm-6">
+                  <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="return showButton()">Book this Package</button>
+                </div>
+
+            </form>
+
+      </div>
+
+
+        <div class="Card  col-6">
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item text-primary"><h2>Destination:&nbsp;<%=Fdata.City%></h2></li>
+            <li class="list-group-item">Class:&nbsp;<%=Fdata.Class==1?"Economy":"Business"%></li>
+            <li class="list-group-item">Price:&nbsp; &#36;<%=Fdata.Price%> HKD</li>
+            <li class="list-group-item Quota">Quato Left:&nbsp;<%=Fdata.Quota>0?Fdata.Quota: 'Sold Out'%></li>
+            <li class="list-group-item">Valid Till:&nbsp;<%=Fdata.ValidDate%></li>
+            <li class="list-group-item">Date:&nbsp;<%=Fdata.B_Dates +' TO '+ Fdata.E_Dates%></li>
+          </ul>
+       </div>
+
+     </div>

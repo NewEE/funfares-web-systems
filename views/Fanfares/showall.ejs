@@ -1,0 +1,42 @@
+
+    <div class="card col-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ID</th>
+          <th>Region</th>
+          <th>City</th>
+          <th>Class</th>
+          <th>Price</th>
+          <th>Quota</th>
+          <th>Valid Date To</th>
+          <th>B_Dates</th>
+          <th>E_Dates</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <%  var index=1;
+      FdataModels.forEach( function(model) { %>
+      <tbody>
+
+        <tr>
+          <th scope="row"><%=index %></th>
+          <td><%=model.id%></td>
+          <td><%=model.Region%></td>
+          <td><%=model.City%></td>
+          <td><%=model.Class%></td>
+          <td><%=model.Price%></td>
+          <td><%=model.Quota%></td>
+          <td><%=model.ValidDate%></td>
+          <td><%=model.B_Dates%></td>
+          <td><%=model.E_Dates%></td>
+
+          <td></td>
+        </tr>
+
+      </tbody>
+      <% index++; }); %>
+    </table>
+  </div>
